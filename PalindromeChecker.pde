@@ -17,7 +17,14 @@ public void setup()
 public boolean palindrome(String word)
 {
   //your code here
-  if(reverse(word).equals(word))
+  String w = new String();
+  for(int i = 0; i <= word.length()-1; i++)
+  {
+    if(Character.isLetter(word.charAt(i)) == true){
+        w = w + word.substring(i, i+1).toLowerCase();
+      }
+  }
+  if(reverse(word).equals(w))
   {
     return true;
   }
@@ -29,10 +36,10 @@ public String reverse(String str)
     //your code here
     for(int i = str.length()-1; i >= 0; i--){
       if(Character.isLetter(str.charAt(i)) == true){
-        sNew = sNew + str.charAt(i);
+        sNew = sNew + str.substring(i, i + 1).toLowerCase();
       }
     } 
-    return sNew.toLowerCase();
+    return sNew;
 }
 
 
